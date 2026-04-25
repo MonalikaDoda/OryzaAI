@@ -23,7 +23,7 @@ function ChatWindow() {
     try {
       setLoading(true);
       setNewChat(false);
-      const reply = await fetch("http://localhost:3000/api/chat", {
+      const reply = await fetch("https://oryzaai-production.up.railway.app/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
