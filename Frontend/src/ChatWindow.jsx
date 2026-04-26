@@ -32,6 +32,15 @@ function ChatWindow() {
       });
       const res = await reply.json();
       console.log(res);
+      if (res.error) {
+        setPrevChats(prev => [...prev,
+          { role: "user", content: prompt },
+          { role: "model", content: "Server is busy, please try again." }
+        ]);
+        setPrompt("");
+        setLoading(false);
+        return;
+      }
       setReply(res.reply);
       setLoading(false);
     } catch (e) {
