@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 import chatsRouter from "./routes/chats.js"
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -17,7 +17,7 @@ const startServer = async () => {
     console.log("Connected to MongoDB");
 
     app.listen(port, () => {
-      console.log("server is listening on port 3000");
+      console.log(`server is listening on port ${port}`);
     });
 
   } catch (err) {
