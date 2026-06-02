@@ -19,7 +19,7 @@ function Sidebar() {
   const getAllThreads = async () => {
     try {
       const response = await fetch(
-        "https://oryzaai-production.up.railway.app/api/thread",
+        "https://oryzaai.onrender.com/api/thread",
       );
       const res = await response.json();
       const filteredData = res.map((thread) => ({
@@ -37,7 +37,7 @@ function Sidebar() {
 
     try {
       const response = await fetch(
-        `https://oryzaai-production.up.railway.app/api/thread/${newThreadId}`,
+        `https://oryzaai.onrender.com/api/thread/${newThreadId}`,
       );
       const res = await response.json();
       console.log(res);
@@ -63,7 +63,7 @@ function Sidebar() {
 
   const deleteThread = async (threadId) => {
     const response = await fetch(
-      `https://oryzaai-production.up.railway.app/api/thread/${threadId}`,
+      `https://oryzaai.onrender.com/api/thread/${threadId}`,
       { method: "DELETE" },
     );
     const res = await response.json();
