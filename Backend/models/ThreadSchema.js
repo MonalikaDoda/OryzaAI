@@ -30,14 +30,8 @@ const threadSchema = new mongoose.Schema(
             default : "New Chat"
         },
         messages : [messageSchema],
-        createdAt : {
-            type : Date,
-            default : Date.now
-        },
-        updatedAt : {
-            type : Date,
-            timestamps: true
-        }
+    }, {
+        timestamps : true
     }
 )
 
